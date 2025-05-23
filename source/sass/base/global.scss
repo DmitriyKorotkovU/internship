@@ -1,0 +1,32 @@
+// :root {
+//   --primary: #316dc2;
+//   --white: #fff;
+//   --beige: #f0efe9;
+//   --text: #484848;
+//   --dark-overlay: rgba(13, 29, 51, 0.4);
+//   --blue-overlay: rgba(49, 109, 194, 0.2);
+//   --state-disabled: #a9afb7;
+//   --state-active: #275699;
+//   --state-error: #ff5e66;
+// }
+
+body {
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: $color-text-primary;
+  background-color: $color-white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

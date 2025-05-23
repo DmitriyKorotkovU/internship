@@ -1,0 +1,81 @@
+.burger-button {
+  --circle-bg-color: #{$color-brand};
+  --icon-img: url("/__spritemap#sprite-burger-view");
+  --icon-color: #{$color-white};
+  --icon-opacity: 1;
+  --transition: all 0.2s;
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 46px;
+  gap: 20px;
+  width: 100%;
+  padding: 3px 3px 3px 20px;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-align: left;
+  text-transform: uppercase;
+  border: 1px solid $color-brand;
+  border-radius: 30px;
+  color: $color-brand;
+  background-color: $color-white;
+  transition: var(--transition);
+
+  &:hover,
+  &:focus {
+    --circle-bg-color: #{$color-white};
+    --icon-color: #{$color-brand};
+
+    color: $color-white;
+    background-color: $color-brand;
+  }
+
+  &:active {
+    --icon-color: #{$color-brand};
+    --circle-bg-color: #{$color-white};
+
+    color: rgba($color: $color-white, $alpha: 0.7);
+    background-color: $color-brand;
+
+    --icon-opacity: 0.7;
+  }
+
+  &--active {
+    --icon-img: url("/__spritemap#sprite-cross-view");
+    --circle-bg-color: #{$color-white};
+    --icon-color: #{$color-brand};
+
+    color: $color-white;
+    background-color: $color-brand;
+  }
+
+  &::before {
+    content: "";
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: block;
+    width: 46px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--circle-bg-color);
+    border-radius: 50%;
+    transition: var(--transition);
+  }
+
+  &::after {
+    content: "";
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: block;
+    width: 46px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--icon-color);
+    mask-image: var(--icon-img);
+    mask-repeat: no-repeat;
+    mask-size: 20px 20px;
+    mask-position: center;
+    transition: var(--transition);
+    opacity: var(--icon-opacity);
+  }
+}

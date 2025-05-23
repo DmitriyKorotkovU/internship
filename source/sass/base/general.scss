@@ -1,0 +1,39 @@
+.container {
+  min-width: $breakpoint-mobile;
+  max-width: $breakpoint-mobile;
+  margin: 0 auto;
+  padding-inline: $container-padding-mobile;
+
+  @include not-mobile {
+    max-width: $breakpoint-tablet;
+    padding-inline: $container-padding-tablet;
+  }
+
+  @include desktop-only {
+    max-width: $breakpoint-desktop;
+    padding-inline: $container-padding-desktop;
+  }
+}
+
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.line-break-span {
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

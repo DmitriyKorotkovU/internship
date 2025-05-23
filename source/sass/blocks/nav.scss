@@ -1,0 +1,136 @@
+.nav {
+  position: relative;
+  width: 136px;
+  transition: all 0.2s;
+  z-index: 2;
+
+  &:has(.nav__list--open) {
+    position: absolute;
+    width: 290px;
+  }
+}
+
+.nav__list {
+  position: relative;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 4px;
+  padding: 21px 25px;
+  background-color: $color-brand;
+  border-radius: 16px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+  transform: scale(0.7);
+  transform-origin: top right;
+  transition: transform 0.2s, opacity 0.2s, visibility 2s;
+
+  &--open {
+    max-height: 80dvh;
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    overflow-y: auto;
+  }
+}
+
+.nav__item {
+  --arrow-rotate: 0;
+  --nav-link-opacity: 0.7;
+
+  &:has(.nav__sub-list) .nav__link {
+    display: flex;
+
+    &::after {
+      content: "";
+      width: 12px;
+      aspect-ratio: 1 / 1;
+      margin-left: 10px;
+      mask-image: url("/__spritemap#sprite-arrow-down-view");
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      background-color: $color-white;
+      rotate: var(--arrow-rotate);
+      transition: all 0.1s;
+    }
+  }
+
+  &:has(.nav__sub-list--open) {
+    --arrow-rotate: 180deg;
+    --nav-link-opacity: 1;
+  }
+}
+
+.nav__link {
+  position: relative;
+  display: block;
+  padding: 14px 0;
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: $color-white;
+  text-transform: uppercase;
+  text-decoration: none;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  opacity: var(--nav-link-opacity);
+  transition: all 0.1s;
+
+  &:hover,
+  &:focus-visible {
+    --nav-link-opacity: 1;
+  }
+
+  &:active {
+    --nav-link-opacity: 0.6;
+  }
+}
+
+.nav__sub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 16px;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-out, margin 100ms ease;
+
+  &--open {
+    height: auto;
+    margin-bottom: 8px;
+    pointer-events: all;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.nav__sub-link {
+  display: block;
+  padding: 6px 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: $color-white;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: all 0.1s;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

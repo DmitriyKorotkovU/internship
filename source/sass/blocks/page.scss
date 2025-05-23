@@ -1,0 +1,41 @@
+.page__body {
+  --overlay-opacity: 0;
+  --overlay-visibility: hidden;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  width: 100%;
+
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    inset: 0;
+    background-color: $color-dark-overlay;
+    opacity: var(--overlay-opacity);
+    transition: opacity 0.2s;
+    pointer-events: none;
+    visibility: var(--overlay-visibility);
+    z-index: 1;
+  }
+
+  &--open-popup {
+    --overlay-opacity: 1;
+    --overlay-visibility: visible;
+
+    position: fixed;
+    overflow: hidden;
+  }
+}
+
+.page__header {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  left: 0;
+}
+
+.page__footer {
+  margin-top: auto;
+}

@@ -1,0 +1,18 @@
+.header__container {
+  display: grid;
+}
+
+.header__logo {
+  position: absolute;
+
+  img,
+  svg {
+    display: block;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.header__nav {
+  justify-self: end;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html class="page" lang="ru" data-validate="html">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-icon-180x180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fonts/manrope/Manrope-Light.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/manrope/Manrope-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/fonts/manrope/Manrope-Medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="sass/vendor/nebo.css">
+  <link rel="stylesheet" href="sass/style.scss">
+</head>
+
+<body class="page__body">
+
+  <header class="header page__header">
+    <h1 class="visually-hidden">Проект "Стажировка"</h1>
+    <div class="container header__container">
+      <div class="header__logo">
+        <img src="/__spritemap#sprite-logo-view" alt="Логотип проекта Стажировка." width="52" height="52">
+      </div>
+      <nav class="nav header__nav js-nav">
+        <button class="burger-button js-burger-button" type="button" aria-expanded="false" aria-controls="nav-list">Меню</button>
+        <ul class="list-reset nav__list js-nav-list" id="nav-list">
+          <li class="nav__item">
+            <a class="nav__link" href="#">О проекте</a>
+          </li>
+          <li class="nav__item js-has-submenu">
+            <button class="nav__link js-menu-toggle" href="#" type="button" data-target="#submenu-programs" aria-expanded="false" aria-controls="submenu-programs">Программы</button>
+            <ul class="list-reset nav__sub-list js-submenu" id="submenu-programs">
+              <li class="nav__sub-item">
+                <a class="nav__sub-link" href="#">Стажировки</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link" href="#">Волонтёрство</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link" href="#">Учёба</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link" href="#">Религия</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Как поехать</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Отзывы</a>
+          </li>
+          <li class="nav__item js-has-submenu">
+            <button class="nav__link js-menu-toggle" href="#" data-target="#submenu-news" aria-expanded="false" aria-controls="submenu-news" type="button">Новости</button>
+            <ul class="list-reset nav__sub-list js-submenu" id="submenu-news">
+              <li class="nav__sub-item">
+                <a class="nav__sub-link" href="#">Общее</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link" href="#">Волонтёрство</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link" href="#">Стажировки</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link" href="#">Карьера</a>
+              </li>
+              <li class="nav__sub-item">
+                <a class="nav__sub-link" href="#">Путешествия</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
+  <svg>
+    <use href="/__spritemap#sprite-user"></use>
+  </svg> -->
+
+  <main>
+    <section class="hero" data-test="hero">
+      <h2 class="visually-hidden">hero</h2>
+      <div class="hero__slider">
+        <picture>
+          <source type="image/webp" srcset="img/hero-1@1x.webp 1x, img/hero-1@2x.webp 2x" width="320" height="568">
+          <img src="img/hero-1@1x.jpeg" srcset="img/hero-1@2x.jpeg 2x" width="320" height="568" alt="Улыбающаяся девушка.">
+        </picture>
+      </div>
+    </section>
+    <div data-test="about">about</div>
+    <div data-test="programs">programs</div>
+    <div data-test="grant">grant</div>
+    <div data-test="news">news</div>
+    <div data-test="FAQ">FAQ</div>
+    <div data-test="reviews">reviews</div>
+    <div data-test="contacts">contacts</div>
+    <div data-test="form">form</div>
+  </main>
+  <footer class="footer page__footer" data-test="footer">footer</footer>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

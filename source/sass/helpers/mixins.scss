@@ -1,0 +1,41 @@
+@mixin font-face($name, $path, $weight, $style) {
+  @font-face {
+    font-family: $name;
+    src:
+      url($path + ".woff2") format("woff2"),
+      url($path + ".woff") format("woff");
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@mixin mobile-only() {
+  @media (width < $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin not-mobile() {
+  @media ($breakpoint-tablet <= width) {
+    @content;
+  }
+}
+
+@mixin tablet-only() {
+  @media ($breakpoint-tablet <= width < $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin not-desktop() {
+  @media (width < $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin desktop-only() {
+  @media ($breakpoint-desktop <= width) {
+    @content;
+  }
+}
