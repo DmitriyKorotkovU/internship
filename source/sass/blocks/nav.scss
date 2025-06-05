@@ -27,6 +27,8 @@
   transform: scale(0.7);
   transform-origin: top right;
   transition: transform 0.2s, opacity 0.2s, visibility 2s;
+  scrollbar-width: thin;
+  scrollbar-color: $color-white $color-dark-overlay;
 
   &--open {
     max-height: 80dvh;
@@ -36,6 +38,22 @@
     visibility: visible;
     overflow-y: auto;
   }
+
+  &::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $color-dark-overlay;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-white;
+    border-radius: 5px;
+    border: 3px solid $color-dark-overlay;
+  }
+
 }
 
 .nav__item {
@@ -74,10 +92,13 @@
   line-height: 100%;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: $color-white;
+  text-align: left;
   text-transform: uppercase;
   text-decoration: none;
   overflow-wrap: break-word;
+  color: $color-white;
+  background-color: transparent;
+  border: 0;
   overflow: hidden;
   opacity: var(--nav-link-opacity);
   transition: all 0.1s;
@@ -103,7 +124,7 @@
   pointer-events: none;
   visibility: hidden;
   opacity: 0;
-  transition: all 0.2s ease-out, margin 100ms ease;
+  transition: margin 50ms ease, all 0.2s ease-out;
 
   &--open {
     height: auto;
